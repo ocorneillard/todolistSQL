@@ -10,20 +10,16 @@ catch(Exception $e)
 				die('Erreur : '.$e->getMessage());
 }
 
-$resultat = $bdd->query('SELECT * FROM todo');
+$resultat = $bdd->query('SELECT * FROM todo WHERE Checked=1');
 while ($donnees = $resultat->fetch()) {
-  if ($donnees['Checked'] == 1) {
+	$ID = $donnees['ID'];
+?>
 
-    if (isset($_POST['ID'])) {
-      $donnees['Checked'] = 0;
-    }
-
-    $ID = $donnees['ID'];
-    echo "<input id=\"$ID\" type=\"checkbox\" name=\"ID[]\" value=\"ok\">";
-    echo "<label for=\"$ID\"><span class=\"check\">✓</span>".$donnees['Do']." </label>";
-  }
+		<input id="<?=$ID;?>" type="checkbox" name="ID[]" value="<?=$donnees['Do'];?>">
+		<label for="<?=$ID;?>"><span class="check">✓</span> <?=$donnees['Do'];?> </label>
+<?php
 }
-
+$resultat->closeCursor();
 
 
 ?>

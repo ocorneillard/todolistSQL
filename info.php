@@ -25,7 +25,6 @@ $resultat = $bdd->query('SELECT * FROM Météo');
 while ($donnees = $resultat->fetch())
 {
 ?>
-
 	<tr>
 			<td><input type="checkbox" name="villeArr[]" value="<?= $donnees['ville']; ?>"><?= $donnees['ville']; ?></td>
 			<td><?= $donnees['haut']; ?></td>

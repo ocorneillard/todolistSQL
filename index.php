@@ -1,3 +1,7 @@
+<?php
+require 'input.php';
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +22,7 @@
                ?>
             </div>
             <div class="section--txt--grid2">
-              <button class="section--btn" type="submit" name="submit" value="button2">
+              <button class="section--btn" type="submit" name="todo" value="button2">
                 <i class="fas fa-thumbs-up"></i>
               </button>
             </form>
